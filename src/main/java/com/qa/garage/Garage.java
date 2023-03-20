@@ -10,7 +10,7 @@ import com.qa.garage.vehicle.Vehicle;
 
 public class Garage {
 
-	private List<Vehicle> vehicles = new ArrayList<>();
+	private List<Vehicle> vehicles = new ArrayList<Vehicle>();
 
 	public boolean addVehicle(Vehicle v) {
 		return this.vehicles.add(v);
@@ -54,7 +54,7 @@ public class Garage {
 	// name -> com.qa.vehicles.Car
 	// simple name -> Car
 	public boolean remove(String type) {
-		List<Vehicle> toRemove = new ArrayList<>();
+		List<Vehicle> toRemove = new ArrayList<Vehicle>();
 		for (Vehicle v : this.vehicles) {
 			if (v.getClass().getSimpleName().equalsIgnoreCase(type))
 				toRemove.add(v);
@@ -63,7 +63,7 @@ public class Garage {
 	}
 
 	public boolean remove(Class clazz) {
-		List<Vehicle> toRemove = new ArrayList<>();
+		List<Vehicle> toRemove = new ArrayList<Vehicle>();
 		for (Vehicle v : this.vehicles) {
 			if (v.getClass() == clazz)
 				toRemove.add(v);

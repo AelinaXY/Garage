@@ -13,6 +13,6 @@ public class Plane extends Vehicle {
 
 	@Override
 	public String toString() {
-		return "Plane [numWheels=" + this.getNumWheels() + ", colour=" + this.getColour() + "]";
+		return "Plane [ID " + this.getId() + "numWheels=" + this.getNumWheels() + ", colour=" + this.getColour() + "]";
 	}
 }
