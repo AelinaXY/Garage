@@ -1,6 +1,8 @@
 package com.qa.garage.vehicle;
 
-public abstract class Vehicle {
+import com.qa.garage.Billable;
+
+public abstract class Vehicle implements Billable {
 
 	public static int count = 0;
 
