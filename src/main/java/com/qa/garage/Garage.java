@@ -71,6 +71,16 @@ public class Garage {
 		return this.vehicles.removeAll(toRemove);
 	}
 
+	public Vehicle findByID(int id) throws VehicleNotFoundException {
+		for (Vehicle i : vehicles) {
+			if (i.getId() == id) {
+				return i;
+			}
+		}
+
+		throw new VehicleNotFoundException("Id " + id + " not found");
+	}
+
 	@Override
 	public String toString() {
 		return "Garage [vehicles=" + this.vehicles + "]";

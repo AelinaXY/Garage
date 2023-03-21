@@ -13,6 +13,6 @@ public class Car extends Vehicle {
 
 	@Override
 	public String toString() {
-		return "Car [ID=" + this.getId() + "numWheels=" + this.getNumWheels() + ", colour=" + this.getColour() + "]";
+		return "Car [ID=" + this.getId() + ", numWheels=" + this.getNumWheels() + ", colour=" + this.getColour() + "]";
 	}
 }
