@@ -36,19 +36,24 @@ public class Runner {
 //		} catch (VehicleNotFoundException e) {
 //			System.out.println("EXCEPTION: ID not found");
 //		}
+		int searchId = 0;
+		Scanner scan = new Scanner(System.in);
 
-		try (Scanner scan = new Scanner(System.in);) {
-			System.out.println("Enter ID to search for: ");
-			int searchId = scan.nextInt();
-			System.out.println(searchId);
-			System.out.println(g.findByID(searchId).toString());
-		} catch (VehicleNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
-			System.out.println("Invalid input");
-			e.printStackTrace();
+		while (searchId != -1) {
+			try {
+				System.out.println("Enter ID to search for (-1 to exit): ");
+				searchId = scan.nextInt();
+				System.out.println(searchId);
+				System.out.println(g.findByID(searchId).toString());
+			} catch (VehicleNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				System.out.println("Invalid input");
+				e.printStackTrace();
+			}
 		}
+		scan.close();
 
 		System.out.println(g);
 
