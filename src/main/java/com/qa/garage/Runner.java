@@ -26,7 +26,10 @@ public class Runner {
 			System.out.println("Cost of Bill is: " + i.calcBill() + "| I am " + i.toString());
 		}
 
-		g.addVehicle(new Car(4, "Black"));
+		VehicleCage<Car> newCage = new VehicleCage();
+		newCage.setVehicle(new Car(4, "Black"));
+
+		g.addVehicle(newCage.getVehicle());
 		g.addVehicle(new Boat(0, "Blue"));
 		g.addVehicle(new Bike(2, "Red"));
 		g.addVehicle(new Car(3, "red"));
@@ -43,6 +46,9 @@ public class Runner {
 			try {
 				System.out.println("Enter ID to search for (-1 to exit): ");
 				searchId = scan.nextInt();
+				if (searchId == -1) {
+					break;
+				}
 				System.out.println(searchId);
 				System.out.println(g.findByID(searchId).toString());
 			} catch (VehicleNotFoundException e) {
